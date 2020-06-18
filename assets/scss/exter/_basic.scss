@@ -1,0 +1,11 @@
+$BlackColor: #222222;
+$LightBlack: #4A4848;
+$GrayColor: #b6b6b6;
+$BlueColor: #2e3192;
+$RedColor: rgba(255,0,0,0.6); //D40000
+
+$RalewayStyle: ('Thin', 'ExtraLight', 'Medium', 'Bold');
+$JuraStyle: ('Medium');
+
+@include font-face(Raleway, Raleway, $RalewayStyle);
+@include font-face(Jura, Jura, $JuraStyle);

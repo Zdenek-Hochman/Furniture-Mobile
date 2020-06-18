@@ -1,0 +1,18 @@
+{
+  "name": "furniture",
+  "version": "1.0.0",
+  "description": "truhlářství zumr",
+  "main": "index.html",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  },
+  "scripts": {
+    "scss": "node-sass --watch assets/scss -o assets/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zdenek-Hochman"
+  },
+  "author": "Zdeněk Hochman",
+  "license": "ISC"
+}

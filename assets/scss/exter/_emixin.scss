@@ -1,0 +1,16 @@
+@mixin GenerateImg {
+    $ImgKitchen: 'Lamine', 'Foil';
+    $ImgInterior: 'Kids', 'Bedroom', 'Other';
+
+    @for $i from 1 through length($ImgKitchen) {
+        & .KitchenCategory:nth-child(#{$i})::before {
+            background-image: url("../img/Gallery/Menu/"+nth($ImgKitchen, $i)+".jpg");
+        }
+    }
+
+    @for $i from 1 through length($ImgInterior) {
+        & .InteriorCategory:nth-child(#{$i})::before {
+            background-image: url("../img/Gallery/Menu/"+nth($ImgInterior, $i)+".jpg");
+        }
+    }
+}

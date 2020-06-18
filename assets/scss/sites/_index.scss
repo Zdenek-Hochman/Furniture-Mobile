@@ -1,0 +1,110 @@
+html {
+    position: relative;
+    font-size: 16px;
+}
+
+.header {
+    width: 85%;
+    min-width: 320px;
+    height: 60px;
+    background-color: black;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+    @include MediaQuery("Tablet-Wide", max) {
+        justify-content: center;
+    }
+    @include MediaQuery("Tablet-Small", max) {
+        justify-content: initial;
+        width: 100%;
+    }
+    .header__burger {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        @include Background("../img/menu/burger.png", center center, contain, no-repeat);
+        @include MediaQuery("Tablet-Small", min) {
+            display: none;
+        }
+    }
+    .header__banner {
+        position: absolute;
+        left: 0;
+        display: inherit;
+        align-items: center;
+        justify-content: flex-end;
+        @include MediaQuery("Tablet-Small", min) {
+            display: none;
+        }
+        .mobileHeading {
+            @include Font("RalewayBold", null, 1.1rem, null);
+            color: white;
+            margin: 0;
+            text-align: left;
+            margin-left: 10px;
+            .mobileHeading__sub {
+                margin-left: 20px;
+                font-family: "RalewayMedium";
+            }
+        }
+    }
+}
+
+.nav {
+    min-width: 320px;
+    .nav__list {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        @include MediaQuery("Tablet-Small", max) {
+            flex-direction: column-reverse;
+            align-items: center;
+            height: 0;
+            display: none;
+        }
+        .item {
+            margin: 0 1.3vw;
+            @include MediaQuery("Tablet-Small", max) {
+                border-bottom: 1px solid black;
+                width: 100%;
+            }
+            .item__a {
+                @include Font("RalewayMedium", null, 1rem, null);
+                position: relative;
+                display: flex;
+                align-items: center;
+                @include Transition(transform, 0.4s, null, linear);
+                @include MediaQuery("Tablet-Small", max) {
+                    color: black;
+                    justify-content: center;
+                    padding: 5vmax
+                }
+                &::before {
+                    @include MediaQuery("Tablet-Small", min) {
+                        @include Pseudo("", null, 3px, 0%);
+                        position: absolute;
+                        left: -8px;
+                        background-color: $RedColor;
+                        @include Transition(height, 0.5s, null, linear);
+                    }
+                }
+                &:hover::before {
+                    height: 100%;
+                    @include Transition(height, 0.3s, null, linear);
+                }
+                &:hover {
+                    @include MediaQuery("Tablet-Small", min) {
+                        @include Transition(transform, 0.3s, null, linear);
+                        @include Transform(null, scale(1.1));
+                    }
+                }
+            }
+        }
+        .item--tablet {
+            @include MediaQuery-Between("Tablet-Small", "Tablet") {
+                display: none;
+            }
+        }
+    }
+}
