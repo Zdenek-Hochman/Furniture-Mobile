@@ -71,15 +71,16 @@ html {
   position: relative;
   font-size: 16px; }
 
+/*----------------------------Header--------------------------*/
 .header {
-  width: 85%;
+  position: relative;
+  width: 90%;
   min-width: 320px;
   height: 60px;
   background-color: black;
   margin: 0 auto;
   display: flex;
-  align-items: center;
-  position: relative; }
+  align-items: center; }
   @media only screen and (max-width: 1024px) {
     .header {
       justify-content: center; } }
@@ -102,10 +103,7 @@ html {
         display: none; } }
   .header .header__banner {
     position: absolute;
-    left: 0;
-    display: inherit;
-    align-items: center;
-    justify-content: flex-end; }
+    left: 0; }
     @media only screen and (min-width: 640px) {
       .header .header__banner {
         display: none; } }
@@ -113,37 +111,36 @@ html {
       font-family: "RalewayBold";
       font-size: 1.1rem;
       color: white;
-      margin: 0;
       text-align: left;
       margin-left: 10px; }
       .header .header__banner .mobileHeading .mobileHeading__sub {
         margin-left: 20px;
         font-family: "RalewayMedium"; }
 
+/*----------------------------Navigation--------------------------*/
 .nav {
   min-width: 320px; }
   .nav .nav__list {
     padding: 0;
     margin: 0;
-    display: flex; }
+    height: 0; }
     @media only screen and (max-width: 640px) {
       .nav .nav__list {
-        flex-direction: column-reverse;
-        align-items: center;
-        height: 0;
-        display: none; } }
+        flex-direction: column-reverse; } }
     .nav .nav__list .item {
       margin: 0 1.3vw; }
       @media only screen and (max-width: 640px) {
         .nav .nav__list .item {
+          margin: 0;
           border-bottom: 1px solid black;
-          width: 100%; } }
+          width: 100%;
+          background-color: white; } }
       .nav .nav__list .item .item__a {
         font-family: "RalewayMedium";
         font-size: 1rem;
-        position: relative;
         display: flex;
         align-items: center;
+        position: relative;
         -webkit-transition: transform 0.4s linear;
         -moz-transition: transform 0.4s linear;
         -ms-transition: transform 0.4s linear;
@@ -186,6 +183,68 @@ html {
             -ms-transform: scale(1.1);
             -o-transform: scale(1.1);
             transform: scale(1.1); } }
-    @media (min-width: 640px) and (max-width: 767px) {
-      .nav .nav__list .item--tablet {
-        display: none; } }
+    .nav .nav__list .item:first-child {
+      margin-right: 0; }
+    .nav .nav__list .item:last-child {
+      margin-left: 0; }
+
+/*----------------------------Main--------------------------*/
+main .backgroundGradient {
+  width: 100%;
+  min-width: 320px;
+  height: 38vmax;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  background: black;
+  background: -moz-linear-gradient(top, black 18%, #2f2f2f 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(18%, black), color-stop(100%, #2f2f2f));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, black 18%, #2f2f2f 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, black 18%, #2f2f2f 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, black 18%, #2f2f2f 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, black 18%, #2f2f2f 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+  /* IE6-9 */ }
+  @media only screen and (max-width: 640px) {
+    main .backgroundGradient {
+      display: none; } }
+
+main .mainBackground {
+  background: url("../img/main/main.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 90%;
+  height: 40vmax;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; }
+  @media only screen and (max-width: 640px) {
+    main .mainBackground {
+      display: none; } }
+  main .mainBackground .heading {
+    font-family: "RalewayBold";
+    font-size: 9vmax;
+    text-align: center;
+    margin: 0;
+    padding: 0 2vw; }
+  main .mainBackground .heading--h1 {
+    background-color: white;
+    mix-blend-mode: screen;
+    letter-spacing: 0.5rem; }
+  main .mainBackground .heading--h2 {
+    background-color: #b6b6b6;
+    color: white;
+    font-family: "RalewayThin";
+    font-size: 5vmax; }
+  main .mainBackground .mainBackground__contact {
+    width: 70%;
+    position: absolute;
+    background-color: blue;
+    height: 100px; }

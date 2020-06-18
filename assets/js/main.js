@@ -2,7 +2,7 @@ $(document).ready(function() {
     function SetWindow() {
         const width = $(window).width();
         (width > 640) ? $(".nav").appendTo($(".header")) : $(".nav").insertAfter($("header"));
-        (width > 640) ? $(".nav__list").css({"display":"flex", "height":"initial"}) : $(".nav__list").css("display","none");
+        (width > 640) ? $(".nav__list").css({"display":"flex", "height":"initial"}) : $(".nav__list").css({"display":"none", "height":0});
     }
 
     $(window).on("resize", function() {
